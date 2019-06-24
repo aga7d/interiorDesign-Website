@@ -1,0 +1,62 @@
+@import "_common.scss";
+#img_container {
+  height: 80vh;
+  width: 100vw;
+  overflow: hidden;
+}
+#text_container {
+  background-color: $pastel_yellow;
+  color: rgb(66, 66, 66);
+  height: 85vh;
+  padding: 20px 0 20px 20px;
+  line-height: 1.8;
+  font-family: "Monsterrat", sans-serif;
+  letter-spacing: 1px;
+  font-weight: 100;
+  font-size: 0.9em;
+  h1 {
+    color: inherit;
+    margin-bottom: 10vh;
+    font-size: 1.5em;
+    font-weight: 500;
+  }
+}
+#inner {
+  max-height: 500px;
+  height: 50vh;
+  @include displayFlex();
+  flex-flow: column;
+  justify-content: space-between;
+}
+.header {
+  font-weight: 500;
+  font-size: 1.1em;
+}
+img {
+  width: 100%;
+  display: block;
+}
+@media (min-width: 840px) {
+  .content {
+    @include displayFlex();
+    height: 100vh;
+    width: 100vw;
+  }
+  #img_container,
+  #text_container {
+    width: 50%;
+  }
+  #img_container {
+    height: 100vh;
+  }
+  #text_container {
+    height: 100vh;
+    position: relative;
+    > div {
+      position: absolute;
+      top: 55%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+}
